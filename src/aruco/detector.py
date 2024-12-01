@@ -23,4 +23,4 @@ class Detector(aruco.ArucoDetector):
         frame_grayscale = cvtColor(frame, COLOR_BGR2GRAY)
         corners, ids, _ = self.detectMarkers(frame_grayscale)
         aruco.drawDetectedMarkers(frame, corners, ids)
-        return {int(i): Marker(*c, *i) for c, i in zip(corners, ids)}
+        return {int(i): Marker(*c) for c, i in zip(corners, ids)}

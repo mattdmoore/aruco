@@ -5,7 +5,7 @@ from aruco.constants import EXTRINSICS
 
 detector = Detector()
 cap = cv2.VideoCapture("data/video.mp4")
-extrinsics = [Marker(c, i) for i, c in enumerate(EXTRINSICS)]
+extrinsics = [Marker(corners) for corners in EXTRINSICS]
 
 
 def main():

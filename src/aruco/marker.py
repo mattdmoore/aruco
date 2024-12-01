@@ -7,9 +7,8 @@ from aruco.constants import CAMERA_MATRIX, DIST_COEFFS
 
 
 class Marker:
-    def __init__(self, corners: MatLike, id: int) -> None:
+    def __init__(self, corners: MatLike) -> None:
         self.corners = corners
-        self.id = id
         self.translation_vector = []
         self.rotation_vector = []
 
