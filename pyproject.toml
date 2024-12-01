@@ -1,0 +1,21 @@
+
+[tool.poetry]
+name = "aruco"
+version = "0.1.0"
+description = "helping my stinky friend with his stinky code"
+authors = ["matt <matt.d.moore@outlook.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+opencv-python = "^4.10.0"
+matplotlib = "^3.9.3"
+numpy = "^2.1.3"
+PyQt6 = "^6.7.1"
+
+[tool.poetry.dev-dependencies]
+ruff = "^0.8.1"
+pytest = "^8.3.3"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
