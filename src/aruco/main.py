@@ -8,6 +8,9 @@ cap = cv2.VideoCapture("data/video.mp4")
 extrinsics = [Marker(corners) for corners in EXTRINSICS]
 
 
+all_markers = {}
+
+
 def main():
     while True:
         success, frame = cap.read()
@@ -18,6 +21,7 @@ def main():
         for i, extrinsic in enumerate(extrinsics):
             extrinsic.estimate_pose(markers[i], frame)
 
+        all_markers.update(markers)
         cv2.imshow("Real-World Points", frame)
 
         if cv2.waitKey(1) & 0xFF == ord("q"):
@@ -26,7 +30,7 @@ def main():
     cap.release()
     cv2.destroyAllWindows()
 
-    plot_result(markers, extrinsics)
+    plot_result(all_markers, extrinsics)
 
 
 if __name__ == "__main__":
