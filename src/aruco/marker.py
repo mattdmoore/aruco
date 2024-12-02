@@ -31,5 +31,6 @@ class Marker:
                 DIST_COEFFS,
             )
 
-            for i, point in enumerate(projected_real_marker):
-                circle(frame, (int(point[0][0]), int(point[0][1])), 5, (255, 0, 0), -1)
+            for point in projected_real_marker:
+                x, y = (int(p) for p in point[0])
+                circle(frame, (x, y), 5, (255, 0, 0), -1)
